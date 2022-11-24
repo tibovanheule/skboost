@@ -18,13 +18,10 @@ from __future__ import print_function
 from __future__ import absolute_import
 
 import re
-import os
 from codecs import open
 from setuptools import setup, find_packages, Extension
 
 import numpy
-
-basedir = os.path.dirname(os.path.abspath(__file__))
 
 
 def read(f):
@@ -60,6 +57,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10'
     ],
     packages=find_packages(exclude=['tests', 'scripts']),
     package_data={
@@ -79,8 +77,7 @@ setup(
     ext_modules=[
         Extension('classifiers',
                   sources=['skboost/stumps/ext/src/classifiers.c'],
-                  include_dirs=[numpy.get_include(),
-                                'skboost/stumps/ext/src/'])
+                  include_dirs=[numpy.get_include(), 'skboost/stumps/ext/src/'])
     ],
     entry_points={}
 )
