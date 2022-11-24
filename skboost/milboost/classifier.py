@@ -22,7 +22,7 @@ from __future__ import absolute_import
 import warnings
 
 import numpy as np
-from sklearn.ensemble.weight_boosting import ClassifierMixin, BaseWeightBoosting
+from sklearn.ensemble._weight_boosting import ClassifierMixin, BaseWeightBoosting
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils.validation import check_is_fitted
 from scipy.optimize import fminbound
