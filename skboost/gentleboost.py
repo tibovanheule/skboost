@@ -22,7 +22,7 @@ from __future__ import absolute_import
 import numpy as np
 
 from sklearn.utils.validation import check_is_fitted
-from sklearn.ensemble.weight_boosting import BaseWeightBoosting, ClassifierMixin, RegressorMixin, DecisionTreeRegressor
+from sklearn.ensemble._weight_boosting import BaseWeightBoosting, ClassifierMixin, RegressorMixin, DecisionTreeRegressor
 
 
 class GentleBoostClassifier(BaseWeightBoosting, ClassifierMixin):
