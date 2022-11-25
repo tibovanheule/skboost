@@ -22,8 +22,7 @@ from __future__ import absolute_import
 import numpy as np
 
 from sklearn.utils.validation import check_is_fitted
-from sklearn.ensemble.weight_boosting import DecisionTreeRegressor
-from sklearn.ensemble.weight_boosting import BaseWeightBoosting, ClassifierMixin, RegressorMixin
+from sklearn.ensemble._weight_boosting import DecisionTreeRegressor, BaseWeightBoosting, ClassifierMixin, RegressorMixin
 
 
 class LogitBoostClassifier(BaseWeightBoosting, ClassifierMixin):
