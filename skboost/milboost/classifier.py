@@ -215,7 +215,7 @@ class MILBoostClassifier(ClassifierMixin, BaseWeightBoosting):
             class in ``classes_``, respectively.
         """
         check_is_fitted(self, "n_classes_")
-        X = self._validate_X_predict(X)
+        X = self._check_X(X)
 
         classes = self.classes_[:, np.newaxis]
         pred = sum((estimator.predict(X) == classes).T * w
@@ -247,7 +247,7 @@ class MILBoostClassifier(ClassifierMixin, BaseWeightBoosting):
             class in ``classes_``, respectively.
         """
         check_is_fitted(self, "n_classes_")
-        X = self._validate_X_predict(X)
+        X = self._check_X(X)
 
         classes = self.classes_[:, np.newaxis]
         pred = None
@@ -335,7 +335,7 @@ class MILBoostClassifier(ClassifierMixin, BaseWeightBoosting):
         check_is_fitted(self, "n_classes_")
 
         n_classes = self.n_classes_
-        X = self._validate_X_predict(X)
+        X = self._check_X(X)
 
         proba = sum(estimator.predict_proba(X) * w
                     for estimator, w in zip(self.estimators_,
@@ -373,7 +373,7 @@ class MILBoostClassifier(ClassifierMixin, BaseWeightBoosting):
             The class probabilities of the input samples. The order of
             outputs is the same of that of the `classes_` attribute.
         """
-        X = self._validate_X_predict(X)
+        X = self._check_X(X)
 
         n_classes = self.n_classes_
         proba = None
